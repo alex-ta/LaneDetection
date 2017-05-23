@@ -41,9 +41,9 @@ class Grid :
 
 		'''
 		self.grid = []
-		for y in range(self.yCount):
+		for y in range(int(self.yCount)):
 			row = []
-			for x in range(self.xCount):
+			for x in range(int(self.xCount)):
 				yH = y*self.yHeight
 				xW = x*self.xWidth
 				row.append(self.img[int(yH):int(yH+self.yHeight), int(xW):int(xW+self.xWidth)])
