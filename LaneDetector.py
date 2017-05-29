@@ -33,14 +33,27 @@ class LaneDetector:
 		
 	def predictLane(self, grid):
 		images = grid.grid;
-		yCount = 0
+		xCount = -1
 		for row in images:
-			yCount = yCount + 1 
-			xCount = 0
-			for img in images:
-				xCount = xCount + 1
-				p = self.model.predict(img)
-				if img == self.lane:
+			xCount = xCount + 1 
+			yCount = -1
+			for img in row:
+				#cv.imshow("img"+str(xCount*yCount),np.array(img))
+				#print(len(images))
+				#print(len(images[0]))
+				#print(len(row))
+				#print(len(row[0]))
+				#print(len(img))
+				#print(len(img[0]))
+				print(grid.xCount)
+				print(grid.yCount)
+				yCount = yCount + 1
+				p = self.model.predict(np.array([img]))
+				print(xCount)
+				print(yCount)
+				print("x, y")
+				print(len(p))
+				if p == 1:
 					grid.markField(xCount, yCount)
-		return getMarkedImage()
+		return grid.getMarkedImage()
 				

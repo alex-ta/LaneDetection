@@ -2,9 +2,10 @@ import grid.grid as grid
 import LaneDetector as detect
 import cv2 as cv
 
-img = cv.imread("arial_0.png")
+img = cv.imread("img.jpg")
 grid = grid.Grid(img)
-grid.getGridCount(25,25)
-detector = detect.LaneDetector("model.py","model.h5")
+grid.getGridShape(60,60)
+detector = detect.LaneDetector("save_data/model.json","save_data/model.h5")
 img = detector.predictLane(grid);
-cv.imshow(img)
+cv.imshow("image",img)
+cv.waitKey(0);
