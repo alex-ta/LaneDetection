@@ -1,6 +1,5 @@
 This Project was a waste product on a study of lanedetection and autonomous driving.
-The Idea was to split an image into different parts and check over a neural network if it contains a street or not. (it sucks)
-A better approach is a neural network with color segmentation of an incomming image like [Segnet](http://mi.eng.cam.ac.uk/projects/segnet/) there is also an python implenentation on all types of classifying image objects [Object detection](https://medium.com/weightsandbiases/car-image-segmentation-using-convolutional-neural-nets-7642448028f6). A small implementation of SegNet (less layers) did a great result for my project. If you want an easy way to detect the lines of a street you could use following Code:
+The Idea was to split an image into different parts and check over a neural network if it contains a street or not. (it sucks). A better approach is a neural network with color segmentation of an incomming image like [Segnet](http://mi.eng.cam.ac.uk/projects/segnet/) there is also blog post on all all types of classifying image objects [Object detection](https://medium.com/weightsandbiases/car-image-segmentation-using-convolutional-neural-nets-7642448028f6). A small implementation of SegNet (less layers) did a great result for my project. If you want an easy way to detect the lines of a street you could use following Code:
 
 ```python
 import  cv2
