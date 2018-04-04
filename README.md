@@ -12,22 +12,22 @@ img = cv2.imread(’1 _1920x1080.png ’)
 height , width , channels = img.shape
 hheight = round(height /2)
 
-#remove  top  half
+#remove  top  half of an image because it contains sky and some unineresting things
 img = img[hheight:height]
 
-#remove  not  white  color (lanemarking)
+#remove  not  white  color (lanemarking) the result is not displayed
 low = np.array ([240 ,240 ,240] ,  dtype = "uint16 ")
 up = np.array ([255 ,255 ,255] ,  dtype = "uint16 ")
 grey = cv2.inRange(img , low , up)
-#canny
+#canny is used to display the edges of all white lines on a street (reduces noise) displayed as Edged Image
 v = np.median(grey)
 lower = int(max(0, (1.0 - sigma) * v))
 upper = int(min(255,  (1.0 + sigma) * v))
 edged = cv2.Canny(grey , lower , upper)
-#average
+#average also average the image to reduce noise is displayed as Averaged Image
 kernel = np.ones ((5 ,5),np.float32)/25
 avg = cv2.filter2D(edged ,-1,kernel)
-#hough
+#hough transformation conntects all lane pixels through lanes displayed as Lined Image
 lined = np.zeros ((hheight , width , 3), np.uint8)
 minLineLength = 100
 maxLineGap = 8
