@@ -42,4 +42,4 @@ plt.subplot (222),plt.imshow(edged ,cmap = ’gray ’)
 plt.title(’Edged  Image ’), plt.xticks ([]), plt.yticks ([])
 ```
 
-![Example Image](https://github.com/alex-ta/LaneDetection/new/master/workingsample.png)
+![Example Image](https://github.com/alex-ta/LaneDetection/blob/master/simplecannyhough.PNG)
